@@ -1,0 +1,2 @@
+#!/bin/sh
+__GLX_VENDOR_LIBRARY_NAME=mesa steam

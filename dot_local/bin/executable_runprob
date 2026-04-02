@@ -1,0 +1,5 @@
+#!/bin/bash
+# quickly compiles and runs the problem code
+
+g++ "$1/main.cpp" -o "$1/a.out"
+"$1/a.out" < "$1/input.txt"

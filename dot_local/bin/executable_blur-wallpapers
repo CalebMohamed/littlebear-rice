@@ -1,0 +1,16 @@
+#!/bin/bash
+SRC_DIR="$HOME/pictures/wallpapers"
+OUT_DIR="$HOME/pictures/wallpapers-processed"
+mkdir -p "$OUT_DIR"
+
+for img in "$SRC_DIR"/*.{jpg,jpeg,png}; do
+  [ -e "$img" ] || continue
+  filename=$(basename "$img")
+  
+  if [ ! -f "$OUT_DIR/$filename" ]; then
+    magick "$img" \
+    \( -clone 0 -resize 1920x1080^ -gravity center -extent 1920x1080 -blur 0x15 \) \
+    \( -clone 0 -resize 1720x880 \) \
+    -delete 0 -gravity center -composite "$OUT_DIR/$filename"
+  fi
+done

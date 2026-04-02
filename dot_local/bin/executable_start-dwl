@@ -1,0 +1,15 @@
+#!/bin/bash
+export WLR_NO_HARDWARE_CURSORS=1
+export GBM_BACKEND=nvidia-drm
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export XDG_CURRENT_DESKTOP=dwl
+export XDG_SESSION_TYPE=wayland
+export MOZ_ENABLE_WAYLAND=1
+
+eval $(gnome-keyring-daemon --start)
+export GNOME_KEYRING_CONTROL
+export SSH_AUTH_SOCK
+
+export PATH="$HOME/.local/bin:$PATH"
+
+exec dwl

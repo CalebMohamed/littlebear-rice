@@ -1,0 +1,42 @@
+#!/bin/sh
+set -eu
+
+echo "loading profile"
+
+PROFILE="${1:-}"
+[ -n "$PROFILE" ] || {
+  printf 'usage: %s <profile>\n' "${0##*/}" >&2
+  exit 64
+}
+
+shift || true
+
+HOME_DIR="${HOME:?}"
+PROFILE_DIR="$HOME_DIR/.config/profiles/$PROFILE"
+
+echo "rerouting configs"
+
+export XDG_CONFIG_HOME="$HOME_DIR/.config/$PROFILE"
+export XDG_DATA_HOME="$HOME_DIR/.local/share/$PROFILE"
+export XDG_CACHE_HOME="$HOME_DIR/.cache/$PROFILE"
+# export XDG_STATE_HOME="$HOME_DIR/.local/state/$PROFILE" only for full isolation
+
+echo "loading environment variables"
+
+if [ -f "$PROFILE_DIR/env" ]; then
+  # shellcheck disable=SC1090
+  . "$PROFILE_DIR/env"
+fi
+
+: "${WM_BIN:?missing WM_BIN in $PROFILE_DIR/env}"
+
+echo "running desktop"
+
+if [ -n "${WM_ARGS:-}" ]; then
+  # shellcheck disable=SC2086
+  set -- "$WM_BIN" $WM_ARGS "$@"
+else
+  set -- "$WM_BIN" "$@"
+fi
+
+exec "$@"

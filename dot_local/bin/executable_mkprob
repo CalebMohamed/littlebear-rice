@@ -1,0 +1,18 @@
+#!/bin/bash
+# makes a folder with templated c++
+
+NAME=$1
+mkdir -p "$NAME"
+cat <<EOF > "$NAME/main.cpp"
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    return 0;
+}
+EOF
+
+touch "$NAME/input.txt" "$NAME/output.txt"
