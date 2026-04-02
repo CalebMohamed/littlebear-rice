@@ -11,3 +11,5 @@ PS1='[\u@\h \W]\$ '
 
 export PATH="$HOME/.local/bin:$PATH"
 export BROWSER=firefox
+
+eval "$(starship init bash)"
