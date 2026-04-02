@@ -1,6 +1,6 @@
 #!/bin/bash
 export WLR_NO_HARDWARE_CURSORS=1
-export XDG_CURRENT_DESKTOP=dwl
+export XDG_CURRENT_DESKTOP=niri
 export XDG_SESSION_TYPE=wayland
 export MOZ_ENABLE_WAYLAND=1
 
@@ -10,5 +10,5 @@ export SSH_AUTH_SOCK
 
 export PATH="$HOME/.local/bin:$PATH"
 
-WM_BIN=dwl
+WM_BIN=niri-session
 WM_ARGS=

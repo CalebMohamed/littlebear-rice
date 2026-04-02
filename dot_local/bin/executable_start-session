@@ -17,9 +17,9 @@ PROFILE_DIR="$HOME_DIR/.config/profiles/$PROFILE"
 echo "rerouting configs"
 
 export XDG_CONFIG_HOME="$HOME_DIR/.config/$PROFILE"
-export XDG_DATA_HOME="$HOME_DIR/.local/share/$PROFILE"
 export XDG_CACHE_HOME="$HOME_DIR/.cache/$PROFILE"
 # export XDG_STATE_HOME="$HOME_DIR/.local/state/$PROFILE" only for full isolation
+# export XDG_DATA_HOME="$HOME_DIR/.local/share/$PROFILE" only for isolating nvim
 
 echo "loading environment variables"
 
