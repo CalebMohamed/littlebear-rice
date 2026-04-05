@@ -1,0 +1,6 @@
+layout {
+  border {
+    active-color "{{ color13 }}" // light magenta
+    inactive-color "{{ color8 }}" // dark grey
+  }
+}

@@ -10,5 +10,6 @@ max_lw = 15 # not too light
 
 [templates]
 foot = { template = 'foot', target = '~/.config/smoothbear/foot/foot.ini' }
+niri = { template = 'niri.kdl', target = '~/.config/smoothbear/niri/border-colors.kdl' }
 wmenu = { template = 'wmenu', target = '~/.cache/wmenu/colors.sh' }
 swaylock = { template = 'swaylock', target = '~/.cache/swaylock/colors.sh' }
