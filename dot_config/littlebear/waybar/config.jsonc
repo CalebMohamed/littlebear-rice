@@ -21,6 +21,7 @@
         "idle_inhibitor"
     ],
     "modules-right": [
+        "custom/pomo",
         "pulseaudio",
         "backlight",
         "keyboard-state",
@@ -69,6 +70,10 @@
     //     "tooltip-format": "MPD (connected)",
     //     "tooltip-format-disconnected": "MPD (disconnected)"
     // },
+    "custom/pomo": {
+      "exec": "pomo status",
+      "interval": 1
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
