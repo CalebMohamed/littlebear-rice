@@ -34,3 +34,5 @@ echo "$wallpaper"
 wallust run "$wallpaper"
 # Send SIGUSR1 to dwl
 pkill -USR1 -x dwl
+# send signal to mako
+makoctl reload
